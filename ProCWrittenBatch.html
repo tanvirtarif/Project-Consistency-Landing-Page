@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Consistency | HSC/Alim'26 Batch</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Bangla -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #f8fafc;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .pulse-soft {
+            animation: pulse-soft 2s infinite;
+        }
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        /* Linktree style button hover */
+        .link-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Toast Notification (Hidden by default) -->
+    <div id="toast" class="fixed top-5 right-5 z-50 hidden bg-green-500 text-white px-6 py-4 rounded-lg shadow-2xl transition-all duration-500 transform translate-y-0 border-l-4 border-green-700">
+        <div class="flex items-center">
+            <i class="fa-solid fa-bell text-2xl mr-3 animate-bounce"></i>
+            <div>
+                <h4 class="font-bold text-lg" id="toast-title">নতুন ভর্তি সম্পন্ন!</h4>
+                <p class="text-sm" id="toast-msg">এইমাত্র একজন শিক্ষার্থী কোর্সে যুক্ত হয়েছে।</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-16 px-4 rounded-b-[3rem] shadow-xl text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <span class="bg-yellow-400 text-slate-900 text-sm font-bold px-4 py-1 rounded-full uppercase tracking-wide">
+                <i class="fa-solid fa-graduation-cap"></i> Project Consistency
+            </span>
+            <h1 class="text-3xl md:text-5xl font-bold mt-6 leading-tight">
+                ঢাকা বিশ্ববিদ্যালয় ভর্তি প্রস্তুতি <br>
+                <span class="text-yellow-300 text-2xl md:text-4xl">HSC/Alim'26 Batch</span>
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-blue-100 font-light">
+                বাংলা লিখিত ও English written এবং বাংলা-English মেমোরাইজিং পার্টস
+            </p>
+            
+            <!-- High Alert Seat Box -->
+            <div class="mt-10 mx-auto max-w-2xl bg-white text-slate-900 p-6 rounded-2xl shadow-2xl pulse-soft border-t-4 border-red-500 relative">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow">
+                    জরুরী বিজ্ঞপ্তি
+                </div>
+                <p class="text-[15px] md:text-base font-semibold text-slate-700 mb-4 leading-relaxed">
+                    <i class="fa-solid fa-circle-exclamation text-red-500 mr-1"></i> যেহেতু প্রত্যেকের খাতা আলাদাভাবে মূল্যায়ন করা হয় তাই খুব বেশি জনকে যুক্ত করা সম্ভব নয়। আর মাত্র কিছু আসন খালি আছে। <span class="text-blue-700 font-bold">এখনই যুক্ত হয়ে যাও!</span>
+                </p>
+                <hr class="border-slate-200 mb-4">
+                <p class="text-xl font-bold">
+                    🔥 আর বাকি আছে মাত্র <span id="seat-counter" class="text-4xl text-red-600 mx-2 transition-all duration-300 inline-block">১৭</span>টি আসন!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Countdown Timer Section -->
+    <section class="py-12 px-4 bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-blue-100 text-center p-8">
+            <h2 class="text-2xl font-bold text-blue-900 mb-2">স্পেশাল আর্লি বার্ড অফার!</h2>
+            <p class="text-slate-500 mb-6">ভর্তি পরীক্ষার আগ পর্যন্ত সম্পূর্ণ কোর্সের ফি (এককালীন)</p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
+                <div class="text-slate-400 text-2xl line-through decoration-red-500 decoration-2 font-bold">
+                    ২৪৯৯ টাকা
+                </div>
+                <i class="fa-solid fa-arrow-right text-blue-300 hidden md:block"></i>
+                <div class="bg-green-100 text-green-700 px-6 py-3 rounded-2xl text-4xl font-extrabold border-2 border-green-500 shadow-lg">
+                    ১৪৯৫ <span class="text-2xl font-bold">টাকা</span>
+                </div>
+            </div>
+
+            <div class="bg-blue-900 text-white rounded-xl p-4 shadow-inner">
+                <p class="text-yellow-300 font-bold mb-3"><i class="fa-solid fa-stopwatch animate-pulse"></i> অফারটি শেষ হতে বাকি:</p>
+                <div class="flex justify-center gap-3 md:gap-6">
+                    <div class="bg-white/20 px-3 py-2 rounded-lg min-w-[70px]">
+                        <div id="cd-days" class="text-2xl font-bold">০৭</div>
+                        <div class="text-xs text-blue-200">দিন</div>
+                    </div>
+                    <div class="text-2xl font-bold py-2">:</div>
+                    <div class="bg-white/20 px-3 py-2 rounded-lg min-w-[70px]">
+                        <div id="cd-hours" class="text-2xl font-bold">০০</div>
+                        <div class="text-xs text-blue-200">ঘণ্টা</div>
+                    </div>
+                    <div class="text-2xl font-bold py-2">:</div>
+                    <div class="bg-white/20 px-3 py-2 rounded-lg min-w-[70px]">
+                        <div id="cd-minutes" class="text-2xl font-bold">০০</div>
+                        <div class="text-xs text-blue-200">মিনিট</div>
+                    </div>
+                    <div class="text-2xl font-bold py-2">:</div>
+                    <div class="bg-white/20 px-3 py-2 rounded-lg min-w-[70px]">
+                        <div id="cd-seconds" class="text-2xl font-bold text-yellow-300">০০</div>
+                        <div class="text-xs text-blue-200">সেকেন্ড</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-left bg-slate-50 p-6 rounded-xl border border-slate-200">
+                <h4 class="font-bold text-lg text-slate-800 mb-2">🚀 যেভাবে ভর্তি হবে:</h4>
+                <p class="text-sm text-slate-600 mb-3">নিচের নম্বরে Send Money করো (বিকাশ/নগদ/রকেট/সেলফিন/উপায় Personal):</p>
+                <div class="bg-white py-3 px-4 rounded-lg text-2xl font-bold tracking-widest text-blue-700 mb-3 border-2 border-dashed border-blue-300 text-center select-all cursor-pointer">
+                    01319493553
+                </div>
+                <p class="text-xs text-slate-500 text-center mb-6">টাকা পাঠানোর পর টেলিগ্রামে বা ইনবক্সে পেমেন্টের স্ক্রিনশট বা শেষ ৪ ডিজিট জানাও।</p>
+                
+                <a href="#" class="block text-center bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-transform transform hover:scale-105">
+                    <i class="fa-brands fa-telegram mr-2"></i> পেমেন্ট সম্পন্ন করে ইনবক্স করো
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Class (Video Embed) -->
+    <section class="max-w-4xl mx-auto py-12 px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 text-blue-900"><i class="fa-brands fa-youtube text-red-600"></i> একটি ডেমো ক্লাস দেখে নাও</h2>
+        <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-200">
+            <!-- Replace 'YOUR_YOUTUBE_ID' with the actual video ID (e.g., dQw4w9WgXcQ) -->
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID" title="Sample Class" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="bg-white py-16 px-4 border-t border-slate-200">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-slate-800">শিক্ষার্থীদের মতামত</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-blue-100 absolute top-4 right-4"></i>
+                    <div class="flex text-yellow-400 text-sm mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 italic">"ভাইয়াদের গাইডলাইন আর রিটেন খাতা মূল্যায়নের কারণেই আমার ঢাকা বিশ্ববিদ্যালয়ে চান্স পাওয়া সম্ভব হয়েছে। বেস্ট মেন্টরশিপ!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center text-blue-700 font-bold">R</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-800">রাকিব হাসান</h4>
+                            <p class="text-xs text-slate-500">ঢাবি 'বি' ইউনিট (সেশন ২৪-২৫)</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-blue-100 absolute top-4 right-4"></i>
+                    <div class="flex text-yellow-400 text-sm mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 italic">"ইংরেজি রিটেন নিয়ে অনেক ভয় ছিল। Project Consistency এর রেগুলার প্র্যাকটিস আর মডেল টেস্ট আমাকে অনেক কনফিডেন্ট করেছে।"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-200 rounded-full flex items-center justify-center text-green-700 font-bold">S</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-800">সাদিয়া ইসলাম</h4>
+                            <p class="text-xs text-slate-500">ঢাবি 'বি' ইউনিট (সেশন ২৪-২৫)</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-blue-100 absolute top-4 right-4"></i>
+                    <div class="flex text-yellow-400 text-sm mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 italic">"খাতা এতো ডিটেইলসে চেক করে দিবে আমি ভাবতেও পারিনি। প্রত্যেকটা ভুল পয়েন্ট আউট করে দিতো, যা অন্য কোথাও পাইনি।"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-purple-200 rounded-full flex items-center justify-center text-purple-700 font-bold">T</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-800">তানভীর আহমেদ</h4>
+                            <p class="text-xs text-slate-500">রাজশাহী বিশ্ববিদ্যালয়</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Linktree Style Links Hub -->
+    <section class="py-16 px-4 bg-slate-900 text-white rounded-t-[3rem]">
+        <div class="max-w-md mx-auto text-center">
+            <div class="w-20 h-20 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                <i class="fa-solid fa-book-open-reader text-3xl text-blue-600"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-2">Project Consistency</h2>
+            <p class="text-slate-400 text-sm mb-8">আমাদের অন্যান্য প্লাটফর্মের সাথে যুক্ত থাকো</p>
+            
+            <div class="flex flex-col gap-4">
+                <!-- Facebook Page -->
+                <a href="#" class="link-btn flex items-center p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all border border-white/10">
+                    <i class="fa-brands fa-facebook text-blue-500 text-2xl w-10"></i>
+                    <span class="font-semibold text-lg flex-1 text-left ml-2">আমাদের ফেসবুক পেইজ</span>
+                    <i class="fa-solid fa-ellipsis text-slate-400"></i>
+                </a>
+                
+                <!-- Facebook Group -->
+                <a href="#" class="link-btn flex items-center p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all border border-white/10">
+                    <i class="fa-solid fa-users text-blue-400 text-2xl w-10"></i>
+                    <span class="font-semibold text-lg flex-1 text-left ml-2">অফিসিয়াল ফেসবুক গ্রুপ</span>
+                    <i class="fa-solid fa-ellipsis text-slate-400"></i>
+                </a>
+
+                <!-- Telegram Channel -->
+                <a href="#" class="link-btn flex items-center p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all border border-white/10">
+                    <i class="fa-brands fa-telegram text-blue-300 text-2xl w-10"></i>
+                    <span class="font-semibold text-lg flex-1 text-left ml-2">টেলিগ্রাম চ্যানেল (ফ্রি নোটস)</span>
+                    <i class="fa-solid fa-ellipsis text-slate-400"></i>
+                </a>
+                
+                <!-- YouTube Channel -->
+                <a href="#" class="link-btn flex items-center p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all border border-white/10">
+                    <i class="fa-brands fa-youtube text-red-500 text-2xl w-10"></i>
+                    <span class="font-semibold text-lg flex-1 text-left ml-2">ইউটিউব চ্যানেল (ফ্রি ক্লাস)</span>
+                    <i class="fa-solid fa-ellipsis text-slate-400"></i>
+                </a>
+            </div>
+        </div>
+        
+        <footer class="text-center mt-16 text-slate-500 text-sm">
+            <p>&copy; 2026 Project Consistency. All rights reserved.</p>
+        </footer>
+    </section>
+
+    <!-- JavaScript For Interactivity -->
+    <script>
+        // Number Converter (English to Bengali)
+        const engToBn = { '0':'০', '1':'১', '2':'২', '3':'৩', '4':'৪', '5':'৫', '6':'৬', '7':'৭', '8':'৮', '9':'৯' };
+        function convertToBanglaNumber(num) {
+            return num.toString().replace(/[0-9]/g, x => engToBn[x]);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 1. SEAT REDUCTION LOGIC (17 -> 16 -> 15 over 2 minutes) ---
+            const seatCounterElement = document.getElementById('seat-counter');
+            const toast = document.getElementById('toast');
+            const toastTitle = document.getElementById('toast-title');
+            
+            function triggerSeatDrop(newSeatNumber, titleText) {
+                // Show Toast
+                toastTitle.innerText = titleText;
+                toast.classList.remove('hidden');
+                
+                // Animate and update counter
+                seatCounterElement.style.transform = 'scale(0)';
+                setTimeout(() => {
+                    seatCounterElement.innerText = convertToBanglaNumber(newSeatNumber);
+                    seatCounterElement.style.transform = 'scale(1.5)';
+                    
+                    setTimeout(() => {
+                        seatCounterElement.style.transform = 'scale(1)';
+                    }, 300);
+                }, 300);
+
+                // Hide Toast after 4 seconds
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 4000);
+            }
+
+            // At 60 seconds (1 minute): Drop to 16
+            setTimeout(() => {
+                triggerSeatDrop(16, "নতুন ভর্তি সম্পন্ন!");
+            }, 60000);
+
+            // At 120 seconds (2 minutes): Drop to 15
+            setTimeout(() => {
+                triggerSeatDrop(15, "আসন দ্রুত শেষ হচ্ছে!");
+            }, 120000);
+
+
+            // --- 2. COUNTDOWN TIMER LOGIC (7 Days) ---
+            // Set end date to 7 days from now
+            let endTime = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
+
+            let countdownTimer = setInterval(() => {
+                let now = new Date().getTime();
+                let distance = endTime - now;
+
+                if (distance < 0) {
+                    clearInterval(countdownTimer);
+                    return; // Timer ended logic can go here
+                }
+
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Format with leading zeros
+                days = String(days).padStart(2, '0');
+                hours = String(hours).padStart(2, '0');
+                minutes = String(minutes).padStart(2, '0');
+                seconds = String(seconds).padStart(2, '0');
+
+                // Update DOM with Bengali Numbers
+                document.getElementById('cd-days').innerText = convertToBanglaNumber(days);
+                document.getElementById('cd-hours').innerText = convertToBanglaNumber(hours);
+                document.getElementById('cd-minutes').innerText = convertToBanglaNumber(minutes);
+                document.getElementById('cd-seconds').innerText = convertToBanglaNumber(seconds);
+
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
