@@ -134,7 +134,7 @@
                 <span class="text-yellow-300 text-2xl md:text-4xl">HSC/Alim'26 Batch</span>
             </h1>
             <p class="mt-4 text-lg md:text-xl text-blue-100 font-light">
-                বাংলা লিখিত ও English Written এক্সামে মুখস্থ বা কমন নয়, ফ্রিহ্যান্ড রাইটিংয়ে দক্ষ হয়ে ওঠার পূর্ণাঙ্গ গাইডলাইন
+                বাংলা লিখিত ও English Written এক্সামে মুখস্থ বা কমন নয়, ফ্রিহ্যান্ড রাইটিংয়ে দক্ষ হয়ে ওঠার পূর্ণাঙ্গ গাইডলাইন
             </p>
             
             <!-- Course Details Button -->
@@ -233,7 +233,7 @@
 
     <!-- Sample Class (Video Embed) -->
     <section class="max-w-4xl mx-auto py-12 px-4">
-        <h2 class="text-3xl font-bold text-center mb-8 text-blue-900"><i class="fa-brands fa-youtube text-red-600"></i> খাতা মূল্যায়নের একটি ডেমো দেখো</h2>
+        <h2 class="text-3xl font-bold text-center mb-8 text-blue-900"><i class="fa-brands fa-youtube text-red-600"></i> খাতা মূল্যায়নের একটি ডেমো দেখো</h2>
         <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-200">
             <!-- Replace 'YOUR_YOUTUBE_ID' with the actual video ID -->
             <iframe class="w-full h-full" src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID" title="Sample Class" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -247,16 +247,17 @@
                 <i class="fa-solid fa-file-pdf text-red-500 mr-2"></i> এখানে কোর্সের বিস্তারিত আউটলাইন দেখো
             </h2>
             <p class="text-center text-slate-600 mb-8 text-sm md:text-base">
-                নিচের পিডিএফ থেকে কোর্সের সম্পূর্ণ ক্লাস ও পরীক্ষার রুটিন বিস্তারিত দেখে নাও। (জুম করে পড়তে পারো)
+                নিচের পিডিএফ থেকে কোর্সের সম্পূর্ণ ক্লাস ও পরীক্ষার রুটিন বিস্তারিত দেখে নাও। (জুম করে পড়তে পারো)
             </p>
             
             <!-- PDF Viewer Container -->
-            <!-- Note: Replace "YOUR_PDF_LINK_HERE" with your actual Google Drive preview link -->
+            <!-- Link updated from /view to /preview -->
             <div class="relative w-full rounded-xl overflow-hidden border-2 border-slate-200 bg-slate-100 h-[400px] md:h-[600px] shadow-inner">
-                <iframe src="https://drive.google.com/file/d/1LpK9rwBWZtAOyU7BOM9LRJ5JUoALInt8/view" class="w-full h-full" frameborder="0" loading="lazy"></iframe>
+                <iframe src="https://drive.google.com/file/d/1LpK9rwBWZtAOyU7BOM9LRJ5JUoALInt8/preview" class="w-full h-full" frameborder="0" loading="lazy"></iframe>
             </div>
 
             <!-- Download Button -->
+            <!-- Note: Download link can still use /view or the direct download link -->
             <div class="mt-8 text-center">
                 <a href="https://drive.google.com/file/d/1LpK9rwBWZtAOyU7BOM9LRJ5JUoALInt8/view" target="_blank" class="inline-flex items-center justify-center bg-blue-100 hover:bg-blue-200 text-blue-800 font-bold py-3 px-8 rounded-full transition-colors shadow-sm border border-blue-200">
                     <i class="fa-solid fa-download mr-2"></i> আউটলাইনটি ডাউনলোড করো
@@ -391,6 +392,14 @@
                     <span class="font-semibold text-lg flex-1 text-left ml-2">টেলিগ্রাম চ্যানেল (ফ্রি নোটস)</span>
                     <i class="fa-solid fa-ellipsis text-slate-400"></i>
                 </a>
+                
+                <!-- NEW: WhatsApp Channel Link -->
+                <a href="#" class="link-btn flex items-center p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all border border-white/10">
+                    <i class="fa-brands fa-whatsapp text-green-500 text-2xl w-10"></i>
+                    <span class="font-semibold text-lg flex-1 text-left ml-2">আমাদের হোয়াটসঅ্যাপ চ্যানেল</span>
+                    <i class="fa-solid fa-ellipsis text-slate-400"></i>
+                </a>
+
                 <a href="#" class="link-btn flex items-center p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all border border-white/10">
                     <i class="fa-brands fa-youtube text-red-500 text-2xl w-10"></i>
                     <span class="font-semibold text-lg flex-1 text-left ml-2">ইউটিউব চ্যানেল (ফ্রি ক্লাস)</span>
@@ -432,7 +441,6 @@
             // ==========================================
             // ১. আসন কমার লজিক (SEAT REDUCTION LOGIC)
             // ==========================================
-            // আপনি চাইলে নিচের initialSeats এর মান পরিবর্তন করতে পারেন
             let initialSeats = 19; 
             let currentSeats = initialSeats;
             
@@ -440,7 +448,6 @@
             const toast = document.getElementById('toast');
             const toastTitle = document.getElementById('toast-title');
             
-            // শুরুতে সিট নাম্বার সেট করা
             seatCounterElement.innerText = convertToBanglaNumber(currentSeats);
 
             function triggerSeatDrop(newSeatNumber, titleText) {
@@ -464,13 +471,13 @@
 
             // ৮ সেকেন্ড পর ১টি আসন কমবে
             setTimeout(() => {
-                currentSeats--; // আসন ১টি কমানো হলো
+                currentSeats--; 
                 triggerSeatDrop(currentSeats, "নতুন ভর্তি সম্পন্ন!");
             }, 8000);
 
             // আরও ১০ সেকেন্ড পর (মোট ১৮ সেকেন্ড পর) আরেকটি আসন কমবে
             setTimeout(() => {
-                currentSeats--; // আসন আরও ১টি কমানো হলো
+                currentSeats--; 
                 triggerSeatDrop(currentSeats, "আসন দ্রুত শেষ হচ্ছে!");
             }, 18000);
 
@@ -478,7 +485,6 @@
             // ==========================================
             // ২. কাউন্টডাউন টাইমার (COUNTDOWN TIMER)
             // ==========================================
-            // 3 দিন, 9 ঘণ্টা, 33 মিনিট, 12 সেকেন্ডের হিসাব
             let timeToAdd = (3 * 24 * 60 * 60 * 1000) + (9 * 60 * 60 * 1000) + (33 * 60 * 1000) + (12 * 1000);
             let endTime = new Date().getTime() + timeToAdd;
 
